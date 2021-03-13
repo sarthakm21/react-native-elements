@@ -53,7 +53,7 @@ const ThemedComponent = (WrappedComponent, themeKey, displayName) => {
 };
 
 function withTheme<P = {}, T = {}>(
-  WrappedComponent: React.ComponentType<P & ThemeProps<T>>,
+  WrappedComponent: React.ComponentType<(P & ThemeProps<T>) | {}>,
   themeKey: string
 ):
   | React.FunctionComponent<Omit<P, keyof ThemeProps<T>>>

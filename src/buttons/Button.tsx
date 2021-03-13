@@ -120,8 +120,7 @@ class Button extends Component<ButtonProps, {}> {
     const background =
       Platform.OS === 'android' && Platform.Version >= 21
         ? TouchableNativeFeedback.Ripple(
-            // @ts-ignore
-            Color(titleStyle.color).alpha(0.32).rgb().string(),
+            Color(titleStyle.color.toString()).alpha(0.32).rgb().string(),
             true
           )
         : undefined;
@@ -270,5 +269,4 @@ const styles = StyleSheet.create({
 });
 
 export { Button };
-//@ts-ignore
 export default withTheme(Button, 'Button');
